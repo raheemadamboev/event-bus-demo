@@ -1,5 +1,6 @@
 package xyz.teamgravity.eventbusdemo.presentation.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -47,10 +48,15 @@ public class Main extends AppCompatActivity {
 
     private void button() {
         onGenerate();
+        onSecond();
     }
 
     private void onGenerate() {
         binding.generateB.setOnClickListener(view -> viewmodel.onGenerate());
+    }
+
+    private void onSecond() {
+        binding.secondB.setOnClickListener(view -> startActivity(new Intent(this, Second.class)));
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)

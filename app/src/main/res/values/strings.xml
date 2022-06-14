@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">EventBusDemo</string>
 
+    <!-- Main -->
     <string name="generate_random_number">Generate random number</string>
+    <string name="navigate_second_activity">Navigate second activity</string>
 </resources>
