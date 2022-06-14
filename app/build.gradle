@@ -21,18 +21,31 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        viewBinding true
     }
 }
 
 dependencies {
 
+    // app compat
     implementation 'androidx.appcompat:appcompat:1.4.2'
+
+    // material
     implementation 'com.google.android.material:material:1.6.1'
+
+    // constraint layout
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    // viewmodel
+    implementation "androidx.lifecycle:lifecycle-viewmodel:2.5.0-rc01"
+
+    // event bus
+    implementation "org.greenrobot:eventbus:3.3.1"
 }
