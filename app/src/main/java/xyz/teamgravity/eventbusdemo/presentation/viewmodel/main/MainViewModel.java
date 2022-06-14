@@ -1,10 +1,12 @@
-package xyz.teamgravity.eventbusdemo.presentation.viewmodel;
+package xyz.teamgravity.eventbusdemo.presentation.viewmodel.main;
 
 import androidx.lifecycle.ViewModel;
 
 import org.greenrobot.eventbus.EventBus;
 
 import java.util.Random;
+
+import xyz.teamgravity.eventbusdemo.presentation.viewmodel.main.MainEvent;
 
 public class MainViewModel extends ViewModel {
 

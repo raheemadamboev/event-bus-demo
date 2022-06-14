@@ -1,4 +1,4 @@
-package xyz.teamgravity.eventbusdemo.presentation.viewmodel;
+package xyz.teamgravity.eventbusdemo.presentation.viewmodel.main;
 
 public class MainEvent {
 

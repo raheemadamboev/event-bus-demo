@@ -11,8 +11,8 @@ import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 import xyz.teamgravity.eventbusdemo.databinding.ActivityMainBinding;
-import xyz.teamgravity.eventbusdemo.presentation.viewmodel.MainEvent;
-import xyz.teamgravity.eventbusdemo.presentation.viewmodel.MainViewModel;
+import xyz.teamgravity.eventbusdemo.presentation.viewmodel.main.MainEvent;
+import xyz.teamgravity.eventbusdemo.presentation.viewmodel.main.MainViewModel;
 
 public class Main extends AppCompatActivity {
 
@@ -59,7 +59,7 @@ public class Main extends AppCompatActivity {
         binding.secondB.setOnClickListener(view -> startActivity(new Intent(this, Second.class)));
     }
 
-    @Subscribe(threadMode = ThreadMode.MAIN)
+    @Subscribe(sticky = true, threadMode = ThreadMode.MAIN)
     public void onEvent(MainEvent event) {
         binding.generateT.setText(event.getMessage());
     }
