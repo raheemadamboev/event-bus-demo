@@ -6,4 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".presentation.activity.Second">
 
+    <TextView
+        android:id="@+id/generate_t"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="656494" />
 </androidx.constraintlayout.widget.ConstraintLayout>
