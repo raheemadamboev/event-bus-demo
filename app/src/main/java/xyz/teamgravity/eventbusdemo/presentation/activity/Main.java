@@ -5,7 +5,12 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
 import xyz.teamgravity.eventbusdemo.databinding.ActivityMainBinding;
+import xyz.teamgravity.eventbusdemo.presentation.viewmodel.MainEvent;
 import xyz.teamgravity.eventbusdemo.presentation.viewmodel.MainViewModel;
 
 public class Main extends AppCompatActivity {
@@ -24,6 +29,18 @@ public class Main extends AppCompatActivity {
         button();
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        EventBus.getDefault().register(this);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        EventBus.getDefault().unregister(this);
+    }
+
     private void lateInIt() {
         viewmodel = new ViewModelProvider(this).get(MainViewModel.class);
     }
@@ -33,8 +50,11 @@ public class Main extends AppCompatActivity {
     }
 
     private void onGenerate() {
-        binding.generateB.setOnClickListener(view -> {
-            viewmodel.onGenerate();
-        });
+        binding.generateB.setOnClickListener(view -> viewmodel.onGenerate());
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onEvent(MainEvent event) {
+        binding.generateT.setText(event.getMessage());
     }
 }
