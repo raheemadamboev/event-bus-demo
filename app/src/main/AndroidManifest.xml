@@ -15,7 +15,7 @@
         android:theme="@style/Theme.EventBusDemo"
         tools:targetApi="31">
         <activity
-            android:name=".Second"
+            android:name=".presentation.activity.Second"
             android:exported="false" />
         <activity
             android:name=".presentation.activity.Main"

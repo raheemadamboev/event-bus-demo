@@ -15,6 +15,6 @@ public class MainViewModel extends ViewModel {
     }
 
     public void onGenerate() {
-        EventBus.getDefault().post(new MainEvent(String.valueOf(random.nextInt(999999))));
+        EventBus.getDefault().postSticky(new MainEvent(String.valueOf(random.nextInt(999999))));
     }
 }
