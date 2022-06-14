@@ -15,6 +15,9 @@
         android:theme="@style/Theme.EventBusDemo"
         tools:targetApi="31">
         <activity
+            android:name=".Second"
+            android:exported="false" />
+        <activity
             android:name=".presentation.activity.Main"
             android:exported="true">
             <intent-filter>
