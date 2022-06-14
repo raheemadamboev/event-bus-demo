@@ -19,4 +19,8 @@ public class SecondViewModel extends ViewModel {
     public void onGenerate() {
         EventBus.getDefault().postSticky(new MainEvent(String.valueOf(random.nextInt(999999))));
     }
+
+    public void onWait() {
+        EventBus.getDefault().post(new SecondEvent("Finally, have been waiting long!"));
+    }
 }
