@@ -1,10 +1,12 @@
-package xyz.teamgravity.eventbusdemo;
+package xyz.teamgravity.eventbusdemo.presentation.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import xyz.teamgravity.eventbusdemo.R;
+
+public class Main extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
